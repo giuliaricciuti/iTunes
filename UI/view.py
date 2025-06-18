@@ -24,32 +24,34 @@ class View(ft.UserControl):
         self._page.controls.append(self._title)
 
         #ROW1
-        self._txtInDurata = ft.TextField(label="Durata")
+        self._txnMin = ft.TextField(label="Min")
         self._btnCreaGrafo = ft.ElevatedButton(text="Crea Grafo",
                                                on_click=self._controller.handleCreaGrafo)
         row1 = ft.Row([
-            ft.Container(self._txtInDurata, width=300),
+            ft.Container(self._txnMin, width=300),
             ft.Container(self._btnCreaGrafo, width=300)
         ], alignment=ft.MainAxisAlignment.CENTER)
         self._page.controls.append(row1)
 
         #ROW2
-        self._ddAlbum = ft.Dropdown(label="Album", on_change=self._controller.getSelectedAlbum)
+        self._ddGenere = ft.Dropdown(label="Genere")
         self._btnAnalisiComp = ft.ElevatedButton(text = "Analisi Componente.",
                                                  on_click=self._controller.handleAnalisiComp)
 
+        self._controller.fillDD()
+
         row2 = ft.Row([
-            ft.Container(self._ddAlbum, width=300),
+            ft.Container(self._ddGenere, width=300),
             ft.Container(self._btnAnalisiComp, width=300)
         ], alignment=ft.MainAxisAlignment.CENTER)
         self._page.controls.append(row2)
 
         #ROW3
-        self._txtInSoglia = ft.TextField(label="Soglia")
+        self._txtMax = ft.TextField(label="Max")
         self._btnSetAlbum = ft.ElevatedButton(text="Set di Album",
                                                on_click=self._controller.handleGetSetAlbum)
         row3 = ft.Row([
-            ft.Container(self._txtInSoglia, width=300),
+            ft.Container(self._txtMax, width=300),
             ft.Container(self._btnSetAlbum, width=300)
         ], alignment=ft.MainAxisAlignment.CENTER)
         self._page.controls.append(row3)
