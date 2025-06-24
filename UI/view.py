@@ -24,19 +24,19 @@ class View(ft.UserControl):
         self._page.controls.append(self._title)
 
         #ROW1
-        self._txtInDurata = ft.TextField(label="Durata")
+        self._txtInPrezzo = ft.TextField(label="Prezzo")
         self._btnCreaGrafo = ft.ElevatedButton(text="Crea Grafo",
                                                on_click=self._controller.handleCreaGrafo)
         row1 = ft.Row([
-            ft.Container(self._txtInDurata, width=300),
+            ft.Container(self._txtInPrezzo, width=300),
             ft.Container(self._btnCreaGrafo, width=300)
         ], alignment=ft.MainAxisAlignment.CENTER)
         self._page.controls.append(row1)
 
         #ROW2
         self._ddAlbum = ft.Dropdown(label="Album", on_change=self._controller.getSelectedAlbum)
-        self._btnAnalisiComp = ft.ElevatedButton(text = "Analisi Componente.",
-                                                 on_click=self._controller.handleAnalisiComp)
+        self._btnAnalisiComp = ft.ElevatedButton(text = "Stampa adiacenze",
+                                                 on_click=self._controller.handleAdiacenze)
 
         row2 = ft.Row([
             ft.Container(self._ddAlbum, width=300),

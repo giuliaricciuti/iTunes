@@ -14,7 +14,7 @@ class Controller:
     def getSelectedAlbum(self, e):
         pass
 
-    def handleAnalisiComp(self, e):
+    def handleAdiacenze(self, e):
         pass
 
     def handleGetSetAlbum(self, e):
